@@ -5257,6 +5257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTo: 6
+  cutScene: 0
 --- !u!65 &498698129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10572,6 +10573,18 @@ PrefabInstance:
       propertyPath: screenBlood
       value: 
       objectReference: {fileID: 1669710613}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: bleedingSing
+      value: 
+      objectReference: {fileID: 1669710618}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: lowHealthEffect
+      value: 
+      objectReference: {fileID: 1669710609}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: mediumHealthEffect
+      value: 
+      objectReference: {fileID: 1669710617}
     - target: {fileID: 3025579617522361960, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
       propertyPath: imageKnife
       value: 
@@ -16095,6 +16108,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2055876427157198797, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
   m_PrefabInstance: {fileID: 1669710605}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669710609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075722490510350692, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 1669710605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1669710610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3443447111637625144, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
@@ -16148,6 +16166,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1669710617 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5028151110135539827, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 1669710605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669710618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 1669710605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672267811
 GameObject:
   m_ObjectHideFlags: 0
@@ -19219,7 +19247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3851559429430941204, guid: 2bffc0574c53f8543ae54061a5a6c388, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3851559429430941204, guid: 2bffc0574c53f8543ae54061a5a6c388, type: 3}
       propertyPath: m_AnchorMax.x

@@ -1771,6 +1771,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+--- !u!1 &208265766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075722490510350692, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 208265765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &208265767 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5028151110135539827, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 208265765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &208265768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 208265765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &226772292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8840041962682887156, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
@@ -3948,6 +3963,18 @@ PrefabInstance:
       propertyPath: screenBlood
       value: 
       objectReference: {fileID: 878305223}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: bleedingSing
+      value: 
+      objectReference: {fileID: 208265768}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: lowHealthEffect
+      value: 
+      objectReference: {fileID: 208265766}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: mediumHealthEffect
+      value: 
+      objectReference: {fileID: 208265767}
     - target: {fileID: 3025579617522361960, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
       propertyPath: imageKnife
       value: 

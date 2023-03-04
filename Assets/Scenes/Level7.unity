@@ -620,6 +620,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+--- !u!1 &77108463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075722490510350692, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 77108462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &77108464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5028151110135539827, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 77108462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &77108465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 77108462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &93166667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7899,6 +7914,18 @@ PrefabInstance:
       propertyPath: screenBlood
       value: 
       objectReference: {fileID: 1883021462}
+    - target: {fileID: 2861042074670364519, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
+      propertyPath: bleedingSing
+      value: 
+      objectReference: {fileID: 77108465}
+    - target: {fileID: 2861042074670364519, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
+      propertyPath: lowHealthEffect
+      value: 
+      objectReference: {fileID: 77108463}
+    - target: {fileID: 2861042074670364519, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
+      propertyPath: mediumHealthEffect
+      value: 
+      objectReference: {fileID: 77108464}
     - target: {fileID: 3446997885420470861, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
       propertyPath: grenade
       value: 

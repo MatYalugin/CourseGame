@@ -589,6 +589,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2055876427157198797, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
   m_PrefabInstance: {fileID: 26721301}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &26721305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075722490510350692, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 26721301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &26721306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3443447111637625144, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
@@ -642,6 +647,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &26721313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5028151110135539827, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 26721301}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &26721314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 26721301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &48533052
 GameObject:
   m_ObjectHideFlags: 0
@@ -53643,6 +53658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTo: 2
+  cutScene: 0
 --- !u!65 &1025902014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125125,9 +125141,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 26721309}
     - target: {fileID: 4967281027890471424, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
+      propertyPath: bleedingSing
+      value: 
+      objectReference: {fileID: 26721314}
+    - target: {fileID: 4967281027890471424, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
       propertyPath: weaponPistol
       value: 
       objectReference: {fileID: 1986405132}
+    - target: {fileID: 4967281027890471424, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
+      propertyPath: lowHealthEffect
+      value: 
+      objectReference: {fileID: 26721305}
+    - target: {fileID: 4967281027890471424, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
+      propertyPath: mediumHealthEffect
+      value: 
+      objectReference: {fileID: 26721313}
     - target: {fileID: 5429153994257497589, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
       propertyPath: m_IsActive
       value: 1

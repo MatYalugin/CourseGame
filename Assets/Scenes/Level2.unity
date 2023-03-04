@@ -6804,6 +6804,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &972716099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075722490510350692, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 972716096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &972716100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5028151110135539827, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 972716096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &972716101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 972716096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &976075830 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2998035574635991560, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
@@ -7250,6 +7265,18 @@ PrefabInstance:
       propertyPath: screenBlood
       value: 
       objectReference: {fileID: 976075830}
+    - target: {fileID: 7088798438361770770, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
+      propertyPath: bleedingSing
+      value: 
+      objectReference: {fileID: 972716101}
+    - target: {fileID: 7088798438361770770, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
+      propertyPath: lowHealthEffect
+      value: 
+      objectReference: {fileID: 972716099}
+    - target: {fileID: 7088798438361770770, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
+      propertyPath: mediumHealthEffect
+      value: 
+      objectReference: {fileID: 972716100}
     - target: {fileID: 7547269009782724721, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
       propertyPath: AmmoText
       value: 
@@ -12666,6 +12693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTo: 3
+  cutScene: 0
 --- !u!65 &1933382577
 BoxCollider:
   m_ObjectHideFlags: 0

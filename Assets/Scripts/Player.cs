@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     public GameObject weaponRifle;
     public GameObject weaponPistol;
     public GameObject weaponKnife;
+    public GameObject mediumHealthEffect;
+    public GameObject lowHealthEffect;
+    public GameObject bleedingSing;
+    public bool isBleeding;
+    private float bleedingDamageTimer = 0f;
     void Start()
     {
         Health = PlayerPrefs.GetFloat("currentHealth");
@@ -35,6 +40,10 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetFloat("currentHealth", Health);
         HealthBar.value = Health;
         HealthText.text = "" + Health;
+        if (Random.value < 0.15f)
+        {
+            isBleeding = true;
+        }
         if (Health <= 0)
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
@@ -90,9 +99,85 @@ public class Player : MonoBehaviour
         {
             controls.SetActive(false);
         }
+
+        if (Health <= 60)
+        {
+            mediumHealthEffect.SetActive(true);
+            lowHealthEffect.SetActive(false);
+        }
+        else
+        {
+            mediumHealthEffect.SetActive(false);
+        }
+        if (Health <= 30)
+        {
+            lowHealthEffect.SetActive(true);
+            mediumHealthEffect.SetActive(false);
+        }
+        else
+        {
+            lowHealthEffect.SetActive(false);
+        }
+        if (Health <= 0)
+        {
+            lowHealthEffect.SetActive(false);
+            mediumHealthEffect.SetActive(false);
+        }
+
+        if (isBleeding == true)
+        {
+            bleedingSing.SetActive(true);
+            bleedingDamageTimer += Time.deltaTime;
+
+            if (bleedingDamageTimer >= 2)
+            {
+                bleedingDamage();
+                bleedingDamageTimer = 0f;
+            }
+        }
+        else if (isBleeding == false)
+        {
+            bleedingSing.SetActive(false);
+        }
     }
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetFloat("currentHealth", 100);
+    }
+
+    public void bleedingChanceExplosion()
+    {
+        if (Random.value < 0.45f)
+        {
+            isBleeding = true;
+        }
+    }
+    public void bleedingChanceTrap()
+    {
+        if (Random.value < 1f)
+        {
+            isBleeding = true;
+        }
+    }
+    private void bleedingDamage()
+    {
+        HealthBar.value = Health;
+        HealthText.text = "" + Health;
+        Health -= 2;
+        PlayerPrefs.SetFloat("currentHealth", Health);
+        if (Health <= 0)
+        {
+            PlayerPrefs.SetFloat("currentHealth", 100);
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0f;
+            DeathMenu.SetActive(true);
+            weaponRifle.SetActive(false);
+            weaponPistol.SetActive(false);
+            weaponKnife.SetActive(false);
+        }
+    }
+    public void bleedingOff()
+    {
+        isBleeding = false;
     }
 }

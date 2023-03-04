@@ -9,6 +9,7 @@ public class HealthBoost : MonoBehaviour
         if (collision.transform.tag.Equals("Player"))
         {
             collision.gameObject.GetComponent<Player>().HealthBoost(GameManager.healthUp);
+            collision.gameObject.GetComponent<Player>().bleedingOff();
             Destroy(gameObject);
         }
     }
