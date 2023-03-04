@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public GameObject weaponKnife;
     void Start()
     {
+        Health = PlayerPrefs.GetFloat("currentHealth");
         HealthBar.maxValue = MaxHealth;
         HealthBar.value = Health;
         HealthText.text = "" + Health;
@@ -27,10 +28,12 @@ public class Player : MonoBehaviour
     {
         GameManager.weaponAnimator.Play("Hurt");
         Health = Health - damage;
+        PlayerPrefs.SetFloat("currentHealth", Health);
         HealthBar.value = Health;
         HealthText.text = "" + Health;
         if (Health <= 0)
         {
+            PlayerPrefs.SetFloat("currentHealth", 100);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
             DeathMenu.SetActive(true);
@@ -52,6 +55,14 @@ public class Player : MonoBehaviour
         if(Health < 100)
         {
             Health = Health + GameManager.healthUp;
+            PlayerPrefs.SetFloat("currentHealth", Health);
+            HealthBar.value = Health;
+            HealthText.text = "" + Health;
+        }
+        if (Health > 100)
+        {
+            Health = 100;
+            PlayerPrefs.SetFloat("currentHealth", Health);
             HealthBar.value = Health;
             HealthText.text = "" + Health;
         }
@@ -74,5 +85,9 @@ public class Player : MonoBehaviour
         {
             controls.SetActive(false);
         }
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetFloat("currentHealth", 100);
     }
 }
