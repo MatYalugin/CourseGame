@@ -2292,6 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTo: 5
+  cutScene: 0
 --- !u!65 &299810382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12619,6 +12620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTo: 8
+  cutScene: 1
 --- !u!4 &1950749955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 192335013863875130, guid: 2cacdd7c9f824984aabc5f6703e53f77, type: 3}
