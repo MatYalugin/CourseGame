@@ -11,6 +11,7 @@ public class Trap : MonoBehaviour
         {
             collision.gameObject.GetComponent<Player>().Hurt(Damage);
             Destroy(gameObject);
+            collision.gameObject.GetComponent<Player>().bleedingChanceTrap();
         }
         if (collision.transform.tag.Equals("Enemy"))
         {

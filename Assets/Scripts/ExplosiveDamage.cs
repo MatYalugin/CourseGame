@@ -10,6 +10,7 @@ public class ExplosiveDamage : MonoBehaviour
         if (collision.transform.tag.Equals("Player"))
         {
             collision.gameObject.GetComponent<Player>().Hurt(Damage);
+            collision.gameObject.GetComponent<Player>().bleedingChanceExplosion();
         }
         if (collision.transform.tag.Equals("Enemy"))
         {
