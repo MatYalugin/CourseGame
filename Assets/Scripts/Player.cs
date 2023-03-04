@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
         HealthBar.value = Health;
         HealthText.text = "" + Health;
     }
+    public void FixedUpdate()
+    {
+        PlayerPrefs.SetFloat("currentHealth", Health);
+    }
 
     public void Hurt(float damage)
     {
