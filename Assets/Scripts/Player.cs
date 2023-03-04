@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Escape) && Input.GetKey(KeyCode.P))
         {
+            PlayerPrefs.SetFloat("currentHealth", 100);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
