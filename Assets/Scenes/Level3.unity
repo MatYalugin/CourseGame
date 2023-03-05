@@ -7668,6 +7668,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
   m_PrefabInstance: {fileID: 981678732}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &981678746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219355950857838035, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 981678732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &991823804
 GameObject:
   m_ObjectHideFlags: 0
@@ -12570,6 +12575,10 @@ PrefabInstance:
       propertyPath: HealthText
       value: 
       objectReference: {fileID: 981678742}
+    - target: {fileID: 8333894113574214363, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
+      propertyPath: knockEffect
+      value: 
+      objectReference: {fileID: 981678746}
     - target: {fileID: 8333894113574214363, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
       propertyPath: optionsMenu
       value: 

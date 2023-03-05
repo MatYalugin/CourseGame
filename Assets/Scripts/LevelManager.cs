@@ -13,6 +13,7 @@ public void ChangeLevel(int index)
         if(bossDeath == true)
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
+            Cursor.visible = true;
         }
     }
     public void ReloadScene()

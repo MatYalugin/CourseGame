@@ -9,5 +9,6 @@ public class CursorOn : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
+        Cursor.visible = true;
     }
 }

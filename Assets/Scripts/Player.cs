@@ -21,6 +21,12 @@ public class Player : MonoBehaviour
     public GameObject bleedingSing;
     public bool isBleeding;
     private float bleedingDamageTimer = 0f;
+    private float KnockOutTimer = 0f;
+    public GameObject knockEffect;
+    private bool isInKnockOut;
+    private bool isHurtedByKnock;
+    private string playerLayerName = "Player";
+    private bool notChaseAble;
     void Start()
     {
         Health = PlayerPrefs.GetFloat("currentHealth");
@@ -47,8 +53,9 @@ public class Player : MonoBehaviour
         if (Health <= 0)
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
-            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             DeathMenu.SetActive(true);
             weaponRifle.SetActive(false);
             weaponPistol.SetActive(false);
@@ -90,6 +97,7 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
+            Cursor.visible = true;
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -124,6 +132,11 @@ public class Player : MonoBehaviour
             mediumHealthEffect.SetActive(false);
         }
 
+        if (isInKnockOut == true)
+        {
+            KnockOutTimer += Time.deltaTime;
+        }
+
         if (isBleeding == true)
         {
             bleedingSing.SetActive(true);
@@ -138,6 +151,14 @@ public class Player : MonoBehaviour
         else if (isBleeding == false)
         {
             bleedingSing.SetActive(false);
+        }
+        if (isInKnockOut == true)
+        {
+            disableEnemiesAttention();
+        }
+        if (isInKnockOut == false)
+        {
+            enableEnemiesAttention();
         }
     }
     private void OnApplicationQuit()
@@ -164,6 +185,29 @@ public class Player : MonoBehaviour
         HealthBar.value = Health;
         HealthText.text = "" + Health;
         Health -= 2;
+        if (Random.value < 0.03f)
+        {
+            isInKnockOut = true;
+            notChaseAble = true;
+            knockEffect.SetActive(true);
+            if(isInKnockOut == true)
+            {
+                if (KnockOutTimer >= 3 && KnockOutTimer <= 8 && isHurtedByKnock == false)
+                {
+                    Hurt(10f);
+                    isHurtedByKnock = true;
+                }
+                if (KnockOutTimer >= 10)
+                {
+                    KnockOutTimer = 0;
+                    knockEffect.SetActive(false);
+                    isInKnockOut = false;
+                    isHurtedByKnock = false;
+                }
+            }
+            
+        }
+
         PlayerPrefs.SetFloat("currentHealth", Health);
         if (Health <= 0)
         {
@@ -174,6 +218,30 @@ public class Player : MonoBehaviour
             weaponRifle.SetActive(false);
             weaponPistol.SetActive(false);
             weaponKnife.SetActive(false);
+        }
+    }
+    public void disableEnemiesAttention()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in objectsWithTag)
+        {
+            Enemy Enemy = obj.GetComponent<Enemy>();
+            if (Enemy != null)
+            {
+                Enemy.notPlayerChaseAble();
+            }
+        }
+    }
+    public void enableEnemiesAttention()
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in objectsWithTag)
+        {
+            Enemy Enemy = obj.GetComponent<Enemy>();
+            if (Enemy != null)
+            {
+                Enemy.PlayerChaseAble();
+            }
         }
     }
     public void bleedingOff()

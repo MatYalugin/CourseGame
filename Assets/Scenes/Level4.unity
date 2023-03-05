@@ -1786,6 +1786,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
   m_PrefabInstance: {fileID: 208265765}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &208265769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219355950857838035, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 208265765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &226772292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8840041962682887156, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
@@ -3955,6 +3960,10 @@ PrefabInstance:
       propertyPath: HealthText
       value: 
       objectReference: {fileID: 969197470}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: knockEffect
+      value: 
+      objectReference: {fileID: 208265769}
     - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
       propertyPath: optionsMenu
       value: 

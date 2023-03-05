@@ -10570,6 +10570,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1669710615}
     - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
+      propertyPath: knockEffect
+      value: 
+      objectReference: {fileID: 1669710619}
+    - target: {fileID: 2422725949972534082, guid: 3b083b89b507b4e4b9c95a4763ce7cd9, type: 3}
       propertyPath: screenBlood
       value: 
       objectReference: {fileID: 1669710613}
@@ -16174,6 +16178,11 @@ GameObject:
 --- !u!1 &1669710618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1592737318333327752, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+  m_PrefabInstance: {fileID: 1669710605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1669710619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3219355950857838035, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
   m_PrefabInstance: {fileID: 1669710605}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1672267811
