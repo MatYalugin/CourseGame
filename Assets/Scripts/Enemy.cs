@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     public AudioSource AudioSource;
     public RuntimeAnimatorController animatorDeath;
     public ParticleSystem blood;
-    private bool notChasing;
     private void Start()
     {
 
@@ -35,10 +34,10 @@ public class Enemy : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        if (Physics.CheckSphere(transform.position, vision, GameManager.playerLayer) && attack == false && notChasing == false)
+        if (Physics.CheckSphere(transform.position, vision, GameManager.playerLayer) && attack == false)
         {
             agent.SetDestination(GameManager.player.transform.position);
-            if (run == false && hurt == false && notChasing == false)
+            if (run == false && hurt == false)
             {
                 run = true;
                 animator.Play("Move");
@@ -47,20 +46,12 @@ public class Enemy : MonoBehaviour
         else
         {
             agent.SetDestination(transform.position);
-            if (run == true && notChasing == true)
+            if (run == true)
             {
                 run = false;
                 animator.Play("Idle");
             }
         }
-    }
-    public void notPlayerChaseAble()
-    {
-        notChasing = true;
-    }
-    public void PlayerChaseAble()
-    {
-        notChasing = false;
     }
     public void AttackPlayer()
     {

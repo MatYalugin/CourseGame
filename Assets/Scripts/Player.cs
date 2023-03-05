@@ -25,8 +25,6 @@ public class Player : MonoBehaviour
     public GameObject knockEffect;
     private bool isInKnockOut;
     private bool isHurtedByKnock;
-    private string playerLayerName = "Player";
-    private bool notChaseAble;
     void Start()
     {
         Health = PlayerPrefs.GetFloat("currentHealth");
@@ -60,6 +58,7 @@ public class Player : MonoBehaviour
             weaponRifle.SetActive(false);
             weaponPistol.SetActive(false);
             weaponKnife.SetActive(false);
+            knockEffect.gameObject.GetComponent<DisableInputScript>().enabled = false;
         }
     }
     public void ScreenBloodOn()
@@ -98,6 +97,7 @@ public class Player : MonoBehaviour
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
             Cursor.visible = true;
+            knockEffect.gameObject.GetComponent<DisableInputScript>().enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -152,14 +152,6 @@ public class Player : MonoBehaviour
         {
             bleedingSing.SetActive(false);
         }
-        if (isInKnockOut == true)
-        {
-            disableEnemiesAttention();
-        }
-        if (isInKnockOut == false)
-        {
-            enableEnemiesAttention();
-        }
     }
     private void OnApplicationQuit()
     {
@@ -188,7 +180,6 @@ public class Player : MonoBehaviour
         if (Random.value < 0.03f)
         {
             isInKnockOut = true;
-            notChaseAble = true;
             knockEffect.SetActive(true);
             if(isInKnockOut == true)
             {
@@ -218,30 +209,6 @@ public class Player : MonoBehaviour
             weaponRifle.SetActive(false);
             weaponPistol.SetActive(false);
             weaponKnife.SetActive(false);
-        }
-    }
-    public void disableEnemiesAttention()
-    {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject obj in objectsWithTag)
-        {
-            Enemy Enemy = obj.GetComponent<Enemy>();
-            if (Enemy != null)
-            {
-                Enemy.notPlayerChaseAble();
-            }
-        }
-    }
-    public void enableEnemiesAttention()
-    {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject obj in objectsWithTag)
-        {
-            Enemy Enemy = obj.GetComponent<Enemy>();
-            if (Enemy != null)
-            {
-                Enemy.PlayerChaseAble();
-            }
         }
     }
     public void bleedingOff()

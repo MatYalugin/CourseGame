@@ -12608,6 +12608,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 981678736}
     - target: {fileID: 8333894113574214363, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
+      propertyPath: DisableInputScript
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333894113574214363, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
       propertyPath: mediumHealthEffect
       value: 
       objectReference: {fileID: 981678744}
