@@ -7451,6 +7451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 124939579}
     m_Modifications:
+    - target: {fileID: 55267698358784072, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6.75
+      objectReference: {fileID: 0}
     - target: {fileID: 983887749738471218, guid: 06a9f258daf161642a267650a48a4fa4, type: 3}
       propertyPath: requiredScore
       value: 15
@@ -11802,6 +11806,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1717966659730298747, guid: cbd2d8fffb125de4c99ffef98104fe0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5927362027746300399, guid: cbd2d8fffb125de4c99ffef98104fe0b, type: 3}
       propertyPath: Damage
       value: 25
@@ -11856,7 +11864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5927362027905319487, guid: cbd2d8fffb125de4c99ffef98104fe0b, type: 3}
       propertyPath: m_Convex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbd2d8fffb125de4c99ffef98104fe0b, type: 3}

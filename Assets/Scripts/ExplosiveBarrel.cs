@@ -6,6 +6,7 @@ public class ExplosiveBarrel : MonoBehaviour
 {
     public float Health = 100;
     public Animator animator;
+    public GameObject fireEffect;
     private void Start()
     {
         tag = "Explosive";
@@ -15,11 +16,24 @@ public class ExplosiveBarrel : MonoBehaviour
         Health = Health - damage;
         if (Health <= 0)
         {
-            animator.Play("Explosion");
+            Explode();
         }
+    }
+    public void Explode()
+    {
+        animator.Play("Explosion");
+        fireEffect.SetActive(false);
     }
     public void DestroyObject()
     {
         Destroy(gameObject);
+    }
+    private void Update()
+    {
+        if (Health <= 40)
+        {
+            fireEffect.SetActive(true);
+            Invoke("Explode", 5f);
+        }
     }
 }
