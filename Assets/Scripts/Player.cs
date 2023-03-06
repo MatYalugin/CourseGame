@@ -99,6 +99,10 @@ public class Player : MonoBehaviour
             Cursor.visible = true;
             knockEffect.gameObject.GetComponent<DisableInputScript>().enabled = false;
         }
+        if(DeathMenu.activeSelf == true)
+        {
+            knockEffect.gameObject.GetComponent<DisableInputScript>().enabled = false;
+        }
         if (Input.GetKeyDown(KeyCode.U))
         {
             controls.SetActive(true);
