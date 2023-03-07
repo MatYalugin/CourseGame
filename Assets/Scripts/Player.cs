@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public GameObject bleedingSing;
     public bool isBleeding;
     private float bleedingDamageTimer = 0f;
+    private float regenTimer = 0f;
     private float KnockOutTimer = 0f;
     public GameObject knockEffect;
     private bool isInKnockOut;
@@ -28,9 +29,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         Health = PlayerPrefs.GetFloat("currentHealth");
-        HealthBar.maxValue = MaxHealth;
-        HealthBar.value = Health;
-        HealthText.text = "" + Health;
     }
     public void FixedUpdate()
     {
@@ -42,8 +40,6 @@ public class Player : MonoBehaviour
         GameManager.weaponAnimator.Play("Hurt");
         Health = Health - damage;
         PlayerPrefs.SetFloat("currentHealth", Health);
-        HealthBar.value = Health;
-        HealthText.text = "" + Health;
         if (Random.value < 0.15f)
         {
             isBleeding = true;
@@ -75,22 +71,21 @@ public class Player : MonoBehaviour
         {
             Health = Health + GameManager.healthUp;
             PlayerPrefs.SetFloat("currentHealth", Health);
-            HealthBar.value = Health;
-            HealthText.text = "" + Health;
         }
         if (Health > 100)
         {
             Health = 100;
             PlayerPrefs.SetFloat("currentHealth", Health);
-            HealthBar.value = Health;
-            HealthText.text = "" + Health;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape) && Input.GetKey(KeyCode.P))
+        HealthBar.maxValue = MaxHealth;
+        HealthBar.value = Health;
+        HealthText.text = "" + Health;
+        if (Input.GetKey(KeyCode.Escape) && Input.GetKey(KeyCode.P))
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
             Cursor.lockState = CursorLockMode.None;
@@ -156,6 +151,16 @@ public class Player : MonoBehaviour
         {
             bleedingSing.SetActive(false);
         }
+
+        if (Health >= 70f && Health != 100f && isBleeding == false)
+        {
+            regenTimer += Time.deltaTime;
+            if (regenTimer >= 4)
+            {
+                regenerateHealth();
+                regenTimer = 0f;
+            }
+        }
     }
     private void OnApplicationQuit()
     {
@@ -218,5 +223,13 @@ public class Player : MonoBehaviour
     public void bleedingOff()
     {
         isBleeding = false;
+    }
+    public void regenerateHealth()
+    {
+        Health += 2f;
+        if(Health > 100f)
+        {
+            Health = 100f;
+        }
     }
 }
