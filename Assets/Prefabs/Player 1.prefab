@@ -2215,6 +2215,11 @@ MonoBehaviour:
   weaponRifle: {fileID: 2561298485203446726}
   weaponPistol: {fileID: 3515712490344304421}
   weaponKnife: {fileID: 1750430113856610946}
+  mediumHealthEffect: {fileID: 0}
+  lowHealthEffect: {fileID: 0}
+  bleedingSing: {fileID: 0}
+  isBleeding: 0
+  knockEffect: {fileID: 0}
 --- !u!114 &7638734252414819896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2224,19 +2229,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8094909687568267550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9c3bccbee4437419d52bc7182d419b, type: 3}
+  m_Script: {fileID: 11500000, guid: bf61fbfab334055459b1e044309f50b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeWeapon: {fileID: 2561298485203446726}
   knife: {fileID: 1750430113856610946}
   pistol: {fileID: 3515712490344304421}
   rifle: {fileID: 2561298485203446726}
-  imageRifle: {fileID: 2561298485203446726}
-  imagePistol: {fileID: 3515712490344304421}
-  imageKnife: {fileID: 1750430113856610946}
+  imageRifle: {fileID: 0}
+  imagePistol: {fileID: 0}
+  imageKnife: {fileID: 0}
 --- !u!95 &2644145033265904421
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2249,10 +2254,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8120505821709669016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,6 +3273,7 @@ MonoBehaviour:
   distance: 2
   kickingDelay: 0.3
   isReadyToKick: 1
+  AmmoText: {fileID: 0}
 --- !u!1001 &4886609401489431609
 PrefabInstance:
   m_ObjectHideFlags: 0

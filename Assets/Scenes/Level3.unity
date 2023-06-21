@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.1623042, g: 0.18199709, b: 0.22154552, a: 1}
+  m_IndirectSpecularColor: {r: 0.16230467, g: 0.1819976, b: 0.22154629, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12351,6 +12351,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2547176137953598402, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 981678740}
     - target: {fileID: 3300641190839819901, guid: 726e9d3e9ed178d42b796295c918a044, type: 3}
       propertyPath: m_Enabled
       value: 1

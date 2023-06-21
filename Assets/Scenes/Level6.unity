@@ -21501,6 +21501,10 @@ PrefabInstance:
       propertyPath: AmmoText
       value: 
       objectReference: {fileID: 1185852271}
+    - target: {fileID: 2348084582749061488, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 1185852271}
     - target: {fileID: 2861042074670364519, guid: 26afdff3012bba043b79e2fa9f858e3e, type: 3}
       propertyPath: Grenade
       value: 

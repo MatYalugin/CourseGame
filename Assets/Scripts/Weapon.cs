@@ -28,7 +28,6 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
-        AmmoText.text = "Ammo: " + ammo + " / " + ammoCapacityMag + "x";
     }
 
     public void Shot()
@@ -134,7 +133,7 @@ public class Weapon : MonoBehaviour
     }
     public void Inspection()
     {
-        if(inspection = true)
+        if(inspection == true)
         {
             if (Input.GetKey(KeyCode.F))
             {
@@ -147,6 +146,7 @@ public class Weapon : MonoBehaviour
         Shot();
         Reload();
         Inspection();
+        AmmoText.text = "Ammo: " + ammo + " / " + ammoCapacityMag + "x";
     }
 }
 

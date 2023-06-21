@@ -125245,6 +125245,10 @@ PrefabInstance:
       propertyPath: damage
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6805246946804157190, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 26721310}
     - target: {fileID: 7042134364907045536, guid: 97a387e332767ba4f9ffaed9756c3d04, type: 3}
       propertyPath: m_IsActive
       value: 0

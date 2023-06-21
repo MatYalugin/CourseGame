@@ -7359,6 +7359,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3647611296837904907, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
+      propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 355529326}
     - target: {fileID: 6483241463715371708, guid: f1a6ad18f8a608744ab671559cb4ff7e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.49419785

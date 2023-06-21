@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
         Sprint();
         Move();
 
-            if (sprintOn == true)
+        if (sprintOn == true)
         {
             speed = sprintSpeed;
         }

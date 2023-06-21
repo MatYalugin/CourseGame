@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Melee : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Melee : MonoBehaviour
     public float distance;
     public float kickingDelay = 0.3f;
     public bool isReadyToKick = true;
+    public Text AmmoText;
     private void Start()
     {
         mainCamera = Camera.main;
@@ -97,5 +99,6 @@ public class Melee : MonoBehaviour
         Kick();
         Inspection();
         sprintKick();
+        AmmoText.text = "Ammo: " + "&";
     }
 }
