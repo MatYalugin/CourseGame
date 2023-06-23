@@ -16,5 +16,9 @@ public class ExplosiveDamage : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().Hurt(Damage);
         }
+        if (collision.transform.tag.Equals("Explosive"))
+        {
+            collision.gameObject.GetComponent<ExplosiveBarrel>().Explode();
+        }
     }
 }

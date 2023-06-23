@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5927362027660881453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.033, y: -0.005, z: -0.385}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
   m_Children:
   - {fileID: 5927362028199598407}
   - {fileID: 5927362028935704829}
@@ -4745,7 +4745,7 @@ Transform:
   m_GameObject: {fileID: 5927362027746300385}
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.03125, y: 0.000000014901, z: -0.375}
-  m_LocalScale: {x: 3.7942693, y: 15.1770735, z: 3.7942684}
+  m_LocalScale: {x: 2.8299937, y: 11.319972, z: 2.829993}
   m_Children: []
   m_Father: {fileID: 5927362027905319484}
   m_RootOrder: 2
@@ -5058,7 +5058,7 @@ MonoBehaviour:
   fireEffect: {fileID: 1717966659730298747}
 --- !u!95 &5927362027905319474
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5071,10 +5071,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &7814235307156573294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14789,7 +14791,7 @@ Transform:
   m_GameObject: {fileID: 5927362028935704830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.22000018}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5927362027660881450}
   m_RootOrder: 1
@@ -19540,7 +19542,7 @@ Transform:
   m_GameObject: {fileID: 5927362029202349065}
   m_LocalRotation: {x: 0.7071068, y: -0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.03125, y: 0.000000014901, z: -0.375}
-  m_LocalScale: {x: 1.9863017, y: 7.9452047, z: 1.9863012}
+  m_LocalScale: {x: 1.3972242, y: 5.5888953, z: 1.3972238}
   m_Children: []
   m_Father: {fileID: 5927362027905319484}
   m_RootOrder: 1
