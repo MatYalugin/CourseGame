@@ -82,8 +82,8 @@ public class Enemy : MonoBehaviour
     {
         hurt = true;
         animator.Play("Hurt");
-        blood.Play();
-
+        if(!_isInFire)
+            blood.Play();
         Health = Health - Damage;
         if (Health <= 0)
         {
