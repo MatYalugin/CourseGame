@@ -258,10 +258,10 @@ public class Player : MonoBehaviour
     }
     private IEnumerator FireDamage(GameObject fire)
     {
+        _fireEffect.SetActive(true);
         while (_isInFire)
         {
             Hurt(5);
-            _fireEffect.SetActive(true);
             yield return new WaitForSeconds(0.5f);
             if (fire == null)
             {
