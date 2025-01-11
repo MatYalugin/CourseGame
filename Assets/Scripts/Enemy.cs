@@ -89,6 +89,7 @@ public class Enemy : MonoBehaviour
         {
             blood.Stop();
             Destroy(_fireEffect);
+            _isInFire = false;
             dead = true;
             agent.SetDestination(transform.position);
             animator.runtimeAnimatorController = animatorDeath;

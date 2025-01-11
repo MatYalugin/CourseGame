@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1775520495118128980}
   - component: {fileID: 1138873128470841345}
   - component: {fileID: 957537325057324629}
+  - component: {fileID: 403090306328184379}
   m_Layer: 0
   m_Name: Glass (1)
   m_TagString: Breakable
@@ -105,6 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: -0.0000019073498, y: 0, z: 0.000015258796}
+--- !u!114 &403090306328184379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772687738888646205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648eaf75156178f458ef4538ab1f07f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 30
 --- !u!1 &5862656854537889034
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,6 +131,7 @@ GameObject:
   - component: {fileID: 9098154511134596261}
   - component: {fileID: 4115288615962839566}
   - component: {fileID: 2383081751661766153}
+  - component: {fileID: 863724601626846597}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Breakable
@@ -210,6 +225,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Center: {x: -0.0000019073498, y: 0, z: 0.000015258796}
+--- !u!114 &863724601626846597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862656854537889034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648eaf75156178f458ef4538ab1f07f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 30
 --- !u!1001 &3115907779852716598
 PrefabInstance:
   m_ObjectHideFlags: 0
