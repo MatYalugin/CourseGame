@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 15497cbdee8d77343ab1b708844b8b7c, type: 3}
@@ -66,10 +67,13 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 15497cbdee8d77343ab1b708844b8b7c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fd19e8fc0ac45ae42843d8707eec3db5, type: 2}
+      objectReference: {fileID: 2100000, guid: 9421534a5592c6945958f2c74053d913, type: 2}
     - target: {fileID: 919132149155446097, guid: 15497cbdee8d77343ab1b708844b8b7c, type: 3}
       propertyPath: m_Name
       value: MatveyRoadBorder (1) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15497cbdee8d77343ab1b708844b8b7c, type: 3}

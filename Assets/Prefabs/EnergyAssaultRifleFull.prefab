@@ -25,12 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827082858289312251}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: -3.088994, z: -5.868395}
   m_LocalScale: {x: 77.2742, y: 128.93697, z: 100}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2395431134328772456}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4296718368518802762
 MeshFilter:
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -59,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 7d2cfd8ad04bc3b4a96f4cd61a935f66, type: 3}
+  - {fileID: 2100000, guid: a82c3e5ae7aeeaf45bb0511ee49f7d5d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,15 +108,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3059517824329551314}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0000029504295, z: -0, w: -1}
   m_LocalPosition: {x: -0.11, y: 0.95684594, z: 2.0331488}
   m_LocalScale: {x: 0.3, y: 0.18, z: 0.18}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7200503222114863563}
   - {fileID: 4379698097801460719}
   - {fileID: 2790766586167429561}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!82 &2789133970763314021
 AudioSource:
@@ -226,12 +229,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   distance: 100
-  animator: {fileID: 0}
   shotAnimName: ShotEnergyRifle
   reloadAnimName: ReloadEnergy Rifle
   ParticleSystem: {fileID: 2597329485146773683}
   useParticleSystem: 1
+  inspection: 0
+  inspectionAnimName: 
   AudioSource: {fileID: 2789133970763314021}
+  bulletCartridge: {fileID: 0}
+  useBulletCartridge: 0
+  ammo: 0
+  maxAmmo: 0
+  ammoCapacityMag: 0
+  maxAmmoCapacityMag: 0
+  AmmoText: {fileID: 0}
+  firingDelay: 0
+  isReadyToFire: 1
+  isAutomatic: 0
 --- !u!1 &6088185393446621401
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,12 +271,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6088185393446621401}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.25881916, y: 0, z: -0, w: 0.9659258}
   m_LocalPosition: {x: 0.000000029802322, y: -2.573792, z: -9.570018}
   m_LocalScale: {x: 25.627893, y: 70.274765, z: 25.627893}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2395431134328772456}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5254329997583017063
 MeshFilter:
@@ -283,6 +298,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -318,6 +334,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2395431134328772456}
     m_Modifications:
     - target: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
@@ -397,14 +414,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
---- !u!4 &2790766586167429561 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4000011227296186, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
-  m_PrefabInstance: {fileID: 2789133971123271683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2597329485146773683 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198000012944515248, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
+  m_PrefabInstance: {fileID: 2789133971123271683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2790766586167429561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000011227296186, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
   m_PrefabInstance: {fileID: 2789133971123271683}
   m_PrefabAsset: {fileID: 0}

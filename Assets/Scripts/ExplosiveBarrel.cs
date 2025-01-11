@@ -7,6 +7,8 @@ public class ExplosiveBarrel : MonoBehaviour
     public float Health = 100;
     public Animator animator;
     public GameObject fireEffect;
+    private bool _isInFire;
+
     private void Start()
     {
         tag = "Explosive";
@@ -34,6 +36,33 @@ public class ExplosiveBarrel : MonoBehaviour
         {
             fireEffect.SetActive(true);
             Invoke("Explode", 5f);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            _isInFire = true;
+            StartCoroutine(FireDamage(other.gameObject));
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            _isInFire = false;
+        }
+    }
+    private IEnumerator FireDamage(GameObject fire)
+    {
+        while (_isInFire)
+        {
+            Hurt(5);
+            yield return new WaitForSeconds(0.5f);
+            if (fire == null)
+            {
+                break;
+            }
         }
     }
 }

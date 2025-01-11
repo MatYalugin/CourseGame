@@ -72,6 +72,13 @@ public class Weapon : MonoBehaviour
                         hit.transform.GetComponent<Breakable>().Hurt(damage);
                     }
                 }
+                if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, distance))
+                {
+                    if (hit.transform.tag.Equals("Molotov"))
+                    {
+                        hit.transform.GetComponent<MolotovGrenade>().Explode();
+                    }
+                }
             }
         }
         if (isAutomatic == false)
@@ -112,6 +119,13 @@ public class Weapon : MonoBehaviour
                     if (hit.transform.tag.Equals("Breakable"))
                     {
                         hit.transform.GetComponent<Breakable>().Hurt(damage);
+                    }
+                }
+                if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, distance))
+                {
+                    if (hit.transform.tag.Equals("Molotov"))
+                    {
+                        hit.transform.GetComponent<MolotovGrenade>().Explode();
                     }
                 }
             }

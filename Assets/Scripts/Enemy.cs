@@ -18,11 +18,15 @@ public class Enemy : MonoBehaviour
     public AudioSource AudioSource;
     public RuntimeAnimatorController animatorDeath;
     public ParticleSystem blood;
+    private bool _isInFire;
+    private float _normalSpeed;
+    [SerializeField]private GameObject _fireEffect;
+
     private void Start()
     {
-
         tag = "Enemy";
         agent = GetComponent<NavMeshAgent>();
+        _normalSpeed = agent.speed;
     }
     public void CheckAttack()
     {
@@ -84,6 +88,7 @@ public class Enemy : MonoBehaviour
         if (Health <= 0)
         {
             blood.Stop();
+            Destroy(_fireEffect);
             dead = true;
             agent.SetDestination(transform.position);
             animator.runtimeAnimatorController = animatorDeath;
@@ -94,14 +99,50 @@ public class Enemy : MonoBehaviour
     {
         hurt = true;
         run = false;
+        agent.speed /= 2;
     }
     public void EndHurt()
     {
         hurt = false;
         run = true;
+        agent.speed = _normalSpeed;
     }
     public void ScreenBloodOff()
     {
         GameManager.playerScreenBlood.SetActive(false);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            _isInFire = true;
+            StartCoroutine(FireDamage(other.gameObject));
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            Invoke("IsInFireFalse", 3f);
+        }
+    }
+    private IEnumerator FireDamage(GameObject fire)
+    {
+        while (_isInFire)
+        {
+            Hurt(5);
+            _fireEffect.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            if (fire == null)
+            {
+                _fireEffect.SetActive(false);
+                break;
+            }
+            if (!_isInFire)
+            {
+                _fireEffect.SetActive(false);
+                break;
+            }
+        }
     }
 }

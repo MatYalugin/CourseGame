@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     public GameObject knockEffect;
     private bool isInKnockOut;
     private bool isHurtedByKnock;
+    private bool _isInFire;
+    [SerializeField] private GameObject _fireEffect;
+
     void Start()
     {
         Health = PlayerPrefs.GetFloat("currentHealth");
@@ -40,13 +43,14 @@ public class Player : MonoBehaviour
         GameManager.weaponAnimator.Play("Hurt");
         Health = Health - damage;
         PlayerPrefs.SetFloat("currentHealth", Health);
-        if (Random.value < 0.15f)
+        if (Random.value < 0.15f && !_isInFire)
         {
             isBleeding = true;
         }
         if (Health <= 0)
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
+            PlayerPrefs.SetInt("molotovCount", 3);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape) && Input.GetKey(KeyCode.P))
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
+            PlayerPrefs.SetInt("molotovCount", 3);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
@@ -165,6 +170,7 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetFloat("currentHealth", 100);
+        PlayerPrefs.SetInt("molotovCount", 3);
     }
 
     public void bleedingChanceExplosion()
@@ -207,11 +213,10 @@ public class Player : MonoBehaviour
             }
             
         }
-
-        PlayerPrefs.SetFloat("currentHealth", Health);
         if (Health <= 0)
         {
             PlayerPrefs.SetFloat("currentHealth", 100);
+            PlayerPrefs.SetInt("molotovCount", 3);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
             DeathMenu.SetActive(true);
@@ -230,6 +235,44 @@ public class Player : MonoBehaviour
         if(Health > 100f)
         {
             Health = 100f;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            _isInFire = true;
+            StartCoroutine(FireDamage(other.gameObject));
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("Fire"))
+        {
+            Invoke("IsInFireFalse", 3f);
+        }
+    }
+    private void IsInFireFalse()
+    {
+        _isInFire = false;
+    }
+    private IEnumerator FireDamage(GameObject fire)
+    {
+        while (_isInFire)
+        {
+            Hurt(5);
+            _fireEffect.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            if (fire == null)
+            {
+                _fireEffect.SetActive(false);
+                break;
+            }
+            if (!_isInFire)
+            {
+                _fireEffect.SetActive(false);
+                break;
+            }
         }
     }
 }

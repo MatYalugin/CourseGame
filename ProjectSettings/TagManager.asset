@@ -10,6 +10,9 @@ TagManager:
   - Trap
   - Breakable
   - ammoBox
+  - Fire
+  - Molotov
+  - Water
   layers:
   - Default
   - TransparentFX
