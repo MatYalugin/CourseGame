@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 957537325057324629}
   m_Layer: 0
   m_Name: Glass (1)
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 2383081751661766153}
   m_Layer: 0
   m_Name: Glass
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
